@@ -28,6 +28,17 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Login/logout url resolving
+
+from django.core.urlresolvers import reverse_lazy
+
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
+
+
 # Application definition
 
 INSTALLED_APPS = (
